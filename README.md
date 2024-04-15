@@ -65,11 +65,11 @@ You can install Postman via this website: https://www.postman.com/downloads/
     -   [x] Commit: `Implement unsubscribe function in Notification controller.`
     -   [x] Write answers of your learning module's "Reflection Publisher-2" questions in this README.
 -   **STAGE 3: Implement notification mechanism**
-    -   [ ] Commit: `Implement update method in Subscriber model to send notification HTTP requests.`
-    -   [ ] Commit: `Implement notify function in Notification service to notify each Subscriber.`
-    -   [ ] Commit: `Implement publish function in Program service and Program controller.`
-    -   [ ] Commit: `Edit Product service methods to call notify after create/delete.`
-    -   [ ] Write answers of your learning module's "Reflection Publisher-3" questions in this README.
+    -   [x] Commit: `Implement update method in Subscriber model to send notification HTTP requests.`
+    -   [x] Commit: `Implement notify function in Notification service to notify each Subscriber.`
+    -   [x] Commit: `Implement publish function in Program service and Program controller.`
+    -   [x] Commit: `Edit Product service methods to call notify after create/delete.`
+    -   [x] Write answers of your learning module's "Reflection Publisher-3" questions in this README.
 
 ## Your Reflections
 This is the place for you to write reflections:
@@ -107,3 +107,22 @@ This is the place for you to write reflections:
     - *Environment Variables: Defining and utilizing environment variables to streamline testing across different environments (e.g., development, staging, production) when testing APIs. This feature simplifies the process of switching between different environments during testing and development.*
 
 #### Reflection Publisher-3
+1. Observer Pattern has two variations: **Push model** (publisher pushes data to subscribers) and **Pull model** (subscribers pull data from publisher). In this tutorial case, which variation of Observer Pattern that we use?
+
+    *In this tutorial case, we are utilizing the Push model variation of the Observer Pattern. This can be inferred from the description that notifications are sent to subscribers who subscribe via HTTP POST requests triggered by product creation, promotions, or deletion.*
+
+2. What are the advantages and disadvantages of using the other variation of Observer Pattern for this tutorial case? (example: if you answer Q1 with Push, then imagine if we used Pull)
+
+    *Advantages:*
+    - *On-Demand Data Retrieval: With the Pull model, subscribers fetch data only when needed, reducing network and computational resource usage.*
+    - *Subscriber Control: Subscribers have full autonomy over when to retrieve data, enabling them to avoid unnecessary data requests.*
+
+    *Disadvantages:*
+
+    - *Delayed Updates: In the Pull model, subscribers must actively request updates, potentially leading to delays in receiving new information. This could be inefficient in scenarios where immediate updates are crucial.*
+    - *Increased Logic Complexity: Implementing the Pull model may necessitate additional logic on the subscriber side to manage data requests and updates efficiently. This could introduce complexity to the codebase and require more effort to maintain.*
+
+3. Explain what will happen to the program if we decide to not use multi-threading in the notification process.
+
+    *If we decide not to use multi-threading in the notification process, notifications will be processed sequentially and in a serial manner. This means each notification will be processed one by one, waiting for the previous notification to finish before processing the next one. As a result, if there are many notifications that need to be sent, this process can become slow and cause delays in providing responses to users. Without multi-threading, the application may feel sluggish and less responsive, especially when sending a large number of notifications. By using multi-threading, we can process notifications in parallel, speeding up the process and enhancing the responsiveness of the application.*
+
