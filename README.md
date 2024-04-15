@@ -58,12 +58,12 @@ You can install Postman via this website: https://www.postman.com/downloads/
     -   [x] Commit: `Implement delete function in Subscriber repository.`
     -   [x] Write answers of your learning module's "Reflection Publisher-1" questions in this README.
 -   **STAGE 2: Implement services and controllers**
-    -   [ ] Commit: `Create Notification service struct skeleton.`
-    -   [ ] Commit: `Implement subscribe function in Notification service.`
-    -   [ ] Commit: `Implement subscribe function in Notification controller.`
-    -   [ ] Commit: `Implement unsubscribe function in Notification service.`
-    -   [ ] Commit: `Implement unsubscribe function in Notification controller.`
-    -   [ ] Write answers of your learning module's "Reflection Publisher-2" questions in this README.
+    -   [x] Commit: `Create Notification service struct skeleton.`
+    -   [x] Commit: `Implement subscribe function in Notification service.`
+    -   [x] Commit: `Implement subscribe function in Notification controller.`
+    -   [x] Commit: `Implement unsubscribe function in Notification service.`
+    -   [x] Commit: `Implement unsubscribe function in Notification controller.`
+    -   [x] Write answers of your learning module's "Reflection Publisher-2" questions in this README.
 -   **STAGE 3: Implement notification mechanism**
     -   [ ] Commit: `Implement update method in Subscriber model to send notification HTTP requests.`
     -   [ ] Commit: `Implement notify function in Notification service to notify each Subscriber.`
@@ -91,5 +91,19 @@ This is the place for you to write reflections:
 
 
 #### Reflection Publisher-2
+1. In the Model-View Controller (MVC) compound pattern, there is no “Service” and “Repository”. Model in MVC covers both data storage and business logic. Explain based on your understanding of design principles, why we need to separate “Service” and “Repository” from a Model? 
+
+    *The separation of "Service" and "Repository" from a Model is necessary due to the Single Responsibility Principle (SRP) from the SOLID principles of software design. SRP dictates that a class should have only one reason to change. Thus, we need to separate concerns to maintain code cohesion and manageability. In the context of MVC, the Model traditionally encompasses both data storage and business logic. However, by separating business logic into Services and data access into Repositories, we adhere more closely to SRP. This separation allows the Model to focus solely on representing data, making it easier to understand, maintain, and extend. Additionally, it facilitates flexibility, as the Model can seamlessly transition between different data storage implementations without affecting its core responsibilities.*
+
+2. What happens if we only use the Model? Explain your imagination on how the interactions between each model (**Program, Subscriber, Notification**) affect the code complexity for each model?
+
+    *Solely relying on the Model without separating concerns into Service and Repository components can lead to increased code complexity and violation of SRP. Each Model (Program, Subscriber, Notification) would be burdened with both data representation and business logic responsibilities, resulting in classes with multiple reasons to change. This can lead to tightly coupled interactions between models, complicating maintenance and expansion efforts. For instance, interactions between different models may become convoluted, with direct dependencies leading to code that is harder to comprehend and maintain. Overall, without proper separation of concerns, code complexity for each model would escalate significantly, impeding understandability, testing, and maintenance efforts.*
+
+3. Have you explored more about **Postman**? Tell us how this tool helps you to test your current work. You might want to also list which features in Postman you are interested in or feel like it is helpful to help your Group Project or any of your future software engineering projects.
+
+    *Postman serves as a valuable tool for testing and interacting with APIs, aiding in the development and validation of software projects. It allows me to simulate API responses and test endpoints without the need for frontend HTML. Key features of Postman that I find useful for group projects and future software engineering endeavors include:*
+    - *Sending Requests: Easily sending HTTP requests to API endpoints with customizable parameters such as headers, query parameters, and request bodies.*
+    - *Automated Testing: Creating and executing automated test suites within Postman to verify the behavior of API endpoints. This includes tests for response status codes, response body content, and more.*
+    - *Environment Variables: Defining and utilizing environment variables to streamline testing across different environments (e.g., development, staging, production) when testing APIs. This feature simplifies the process of switching between different environments during testing and development.*
 
 #### Reflection Publisher-3
